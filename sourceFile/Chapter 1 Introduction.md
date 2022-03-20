@@ -67,7 +67,7 @@ waves2Foam在以下版本中均可编译，但请注意警告1.1.
 
 下载和安装说明针对默认安装位置（代码片段1.1）。如果安装在非默认位置，请参阅第1.4.3节了解$./Allwmake之前的其他操作。
 
-代码片段1.1：默认安装目录的下载和安装说明（$号表示命令）。
+<center>代码片段1.1：默认安装目录的下载和安装说明（$号表示命令）。</center>
 
 ``` shell
 ## First, source your OpenFoam version
@@ -96,7 +96,7 @@ waves2Foam默认给出一个控制文件`bashrc.org`，位于目录`bin`中。�
 对waves2Foam的更新是通过更新SVN存储库获得的，然后是重新编译。
 代码片段1.2概述了这一点。
 
-代码片段1.2：更新SVN存储库并重新编译waves2Foam：
+<center>代码片段1.2：更新SVN存储库并重新编译waves2Foam：</center>
 
 ```shell
 $ svn update
@@ -120,7 +120,7 @@ SVN存储库的更新通常通过CFD在线发布在名为“Release of aWave Gen
 
 waves2Foam的任何使用：请引用代码片段1.3中规定的原始工作(Jacobsen et al., 2012)。
 
->代码片段1.3：参考waves2Foam发布时附带的原始文件:
+><center>代码片段1.3：参考waves2Foam发布时附带的原始文件:</center>
 >
 >@article{jacobsenFuhrmanFredsoe2012,
 >Author = {Jacobsen, N G and Fuhrman, D R and Freds\o{}e, J},
@@ -136,7 +136,7 @@ waves2Foam的任何使用：请引用代码片段1.3中规定的原始工作(Jac
 
 孔隙度模块的使用：请引用代码片段1.4中规定的渗透结构过滤速度(Jensen et al., 2014)的Navier-Stokes方程的推导。
 
-> 代码片段1.4：参考waves2Foam中孔隙度实现的论文
+> <center>代码片段1.4：参考waves2Foam中孔隙度实现的论文</center>
 >
 > @article{jensenJacobsenChristensen2014,
 > Author = {Jensen, B and Jacobsen, N G and Christensen, E D},
@@ -151,7 +151,7 @@ waves2Foam的任何使用：请引用代码片段1.3中规定的原始工作(Jac
 与OceanWave3D的耦合：当使用waves2Foam和OceanWave3D之间的耦合时，请引用Paulsen et al. (2014a)了解耦合（代码片段1.5），引用Engsig-Karup et al. (2009)了解OceanWave3D的开发（代码片段1.6）。
 耦合后来被简化到waves2Foam框架中，并作为外部源安装到框架中，见第4.2.8节）。
 
-> 代码片段1.5：引用waves2Foam和Ocean-Wave3D之间的耦合。
+> <center>代码片段1.5：引用waves2Foam和Ocean-Wave3D之间的耦合。</center>
 > @article{ paulsenBredmoseBingham2014,
 > Author = {Paulsen, B. T. and Bredmose, H. and Bingham, H. B.},
 > Title = {{An efficient domain decomposition strategy for wave loads on
@@ -162,7 +162,7 @@ waves2Foam的任何使用：请引用代码片段1.3中规定的原始工作(Jac
 > Pages = {{57-76}},
 > }
 
->代码片段t 1.6: 引用 OceanWave3D.
+><center>代码片段t 1.6: 引用 OceanWave3D.</center>
 >@article{ engsigKarupBinghamLindberg2009,
 >Author = {Engsig-Karup, A. P. and Bingham, H. B. and Lindberg, O.},
 >Title = {{An efficient flexible-order model for 3D nonlinear water waves}},

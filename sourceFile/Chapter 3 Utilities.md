@@ -12,7 +12,7 @@
 
 文件`constant/probeDefinitions`用于指定浪高仪和探头的位置。通用设置在代码片段3.1中定义。
 
-代码片段3.1：浪高仪和探头定义的通用设置
+<center>代码片段3.1：浪高仪和探头定义的通用设置</center>
 
 ```c++
 <name of wave gauges>
@@ -39,7 +39,7 @@
 
 **circularDistribution**：定义围绕给定中心具有一定半径的圆形分布。点分布的定义见代码片段3.2。
 
-代码片段3.2：圆形点分布
+<center>代码片段3.2：圆形点分布</center>
 
 ```c++
 pointDistribution 	circularDistribution;
@@ -50,7 +50,7 @@ radius 				1;
 
 **lineDistribution**：定义沿由起点和终点定义的直线的线性分布。有可能使分布沿直线延伸；导致非等距点分布（代码片段3.3）。
 
-代码片段3.3：线性点分布
+<center>代码片段3.3：线性点分布</center>
 
 ```c++
 pointDistribution 	lineDitribution;
@@ -61,7 +61,7 @@ stretch 			1.;
 ```
 **quadrilateralDistribution**：定义一个四边形的点分布，即可以定义一个矩形的浪高仪分布，例如3*3=9个浪高仪（代码片段3.4）。
 
-代码片段3.4：四边形点分布
+<center>代码片段3.4：四边形点分布</center>
 
 ```c++
 pointDistribution 	quadrilateralDistribution;
@@ -75,7 +75,7 @@ stretch1 			1.1; 		// Default = 1.0
 ```
 **userDefinedDistribution**: 在物理实验中，当浪高仪应按位置分布时（代码片段3.5），可以方便地使用用户定义的分布。
 
-代码片段3.5：用户定义的点分布
+<center>代码片段3.5：用户定义的点分布</center>
 
 ```c++
 pointDistribution 	userDefinedDistribution;
@@ -100,20 +100,20 @@ zValues 			uniform 0;
 运行时采样以波高计为例。类似的方法适用于探头压力计。
 作为后处理步骤或运行时评估，可以使用预定义的波计对表面高程进行采样。后者在这里讨论，前者在第3.3.1节中描述。`waveGaugesNProbes`输出的一部分是名为`<name of set>_controlDict`的文件（代码片段3.6）。
 
-代码片段3.6：表面高程采样控制示例。
+<center>代码片段3.6：表面高程采样控制示例。</center>
 
 ```c++
 surfaceElevation
 {
-	type 				surfaceElevation;
+	type 			surfaceElevation;
 	functionObjectLibs 	( "libwaves2Foam.so" );
 	outputControl 		timeStep; // Alternative: outputTime
 	outputInterval 		1;
 	//Additional output controls in waves2Foam
 	//samplingStartTime -1;
 	//surfaceSampleDeltaT 0.025;
-	setFormat 			raw;
-	interpolationScheme cellPointFace;
+	setFormat 		raw;
+	interpolationScheme 	cellPointFace;
 	fields (alpha1);
 	#includeIfPresent "../waveGaugesNProbes/surfaceElevationAnyName_sets";
 }
@@ -121,3 +121,12 @@ surfaceElevation
 
 注意，指示符字段alpha1的名称自动调整为给定版本OpenFoam的默认命名。
 普通的`outputControls`适用于此实用程序，但也可以以近似等距的时间步长对表面高程进行采样，该时间步长远小于字段的输出时间（请参见代码片段3.6中的注释行）。注意，不考虑`surfaceSampleDeltaT`的值，采样实用程序仅基于标准OpenFoam控件（`outputControl`和`outputInterval`）访问。建议使用默认设置。
+
+### 3.1.2 setWaveParameters
+
+实用程序`setWaveParameters`是一种预处理实用程序，计算所有必要的有物理意义波浪参数，例如`setWaveParameters`将水深和波周期的信息转换为一阶斯托克斯波理论的波数。
+
+所有的输入参数都在`<casePath>/constant/waveProperties.input`文件中，处理后的数据输出到`<casePath>/constant/waveProperties`中。这样分为两个文件的做法源于历史原因。
+
+输入文件`WaveProperties.input`包含全局信息以及与每个波浪边界和/或松弛区相关的信息。以下两节给出了边界条件和/或松弛区域的全局参数和设置。（此处的`和/或`表明松弛区设置可以没有-译者注）
+

@@ -92,7 +92,7 @@ Vukcevic et al. (2016a,b)提出了一种隐式松弛区实现方法，尽管该�
 
 松弛区在`waveProperties.input`文件里子词典中指定，请参阅第3.1.2节了解更多详细信息。松弛区的定义见代码片段2.1。以下各节分别对这些控件进行了描述。
 
-代码片段2.1：松弛区的基本定义
+<center>代码片段2.1：松弛区的基本定义</center>
 
 ```c++
 relaxationZone
@@ -110,7 +110,7 @@ relaxationZone
 
 **relaxationScheme Empty**  这种方法有效地实现了松弛（代码片段2.2）。
 
-代码片段2.2：Empty松弛方案
+<center>代码片段2.2：Empty松弛方案</center>
 
 ```c++
 relaxationZone
@@ -121,7 +121,7 @@ relaxationZone
 
 **relaxationScheme Spatial** 空间松弛方案根据公式（2.8）（代码片段2.3）进行松弛。
 
-代码片段2.3：空间松弛方案
+<center>代码片段2.3：空间松弛方案</center>
 
 ```c++
 relaxationZone
@@ -152,7 +152,7 @@ $$w_{R}=1-\frac{\exp \sigma^{p}-1}{\exp 1-1}$$
 
 默认情况下，指数$p$设置为3.5。该方法是默认的，不需要指定它，但是可以在代码片段2.4中显式地包含它：
 
-代码片段2.4：指数权重函数
+<center>代码片段2.4：指数权重函数</center>
 
 ```c++
 relaxationWeight 	Exponential; // Default
@@ -165,7 +165,7 @@ $$w_R=1-\sigma^p$$
 
 其中$p$是整数指数。权重可以在代码片段2.5中指定。指数$p$没有默认值。
 
-代码片段2.5：自由多项式权函数
+<center>代码片段2.5：自由多项式权函数</center>
 
 ```c++
 relaxationWeight 	FreePolynomial;
@@ -178,7 +178,7 @@ $$w_{R}=-2 \tilde{\sigma}^{3}+3 \tilde{\sigma}^{2}$$
 
 其中$\tilde{\sigma}=1-\sigma$. 权重可以在代码片段2.6中指定
 
-代码片段2.6：三阶多项式权函数
+<center>代码片段2.6：三阶多项式权函数</center>
 
 ```c++
 relaxationWeight 	ThirdOrderPolynomial;
@@ -197,7 +197,7 @@ relaxationWeight 	ThirdOrderPolynomial;
 
 **矩形**：矩形形状是最有用的形状，因为它同样适用于二维和三维模拟。它是基于矩形的两个对角点的坐标和一个侧面的方向（以及松弛方向）来定义的。松弛形状的格式在代码片段2.7中给出
 
-代码片段2.7：矩形松弛形状
+<center>代码片段2.7：矩形松弛形状</center>
 
 ```c++
 relaxationShape 	Rectangular;
@@ -212,7 +212,7 @@ orientation 		<vector>;
 
 **半圆柱形**：可以根据代码片段2.8中的规范定义半圆柱形。这种方法也许不是特别有用，但它展示了如何定义可选形状的示例。
 
-代码片段2.8：半圆柱形松弛形状
+<center>代码片段2.8：半圆柱形松弛形状</center>
 
 ```c++
 relaxationShape 	SemiCylindrical;
@@ -226,7 +226,7 @@ angleEnd 			<scalar>; // [degrees]
 
 **圆柱形**：圆柱形松弛形状定义了一个具有内部和外部辐射的松弛区（代码片段2.9）。目标解在圆柱形松弛区的外缘处强制执行。到目前为止，这种松弛区的唯一用途似乎是Arrighi et al. (2015)的工作。
 
-代码片段2.9：圆柱形松弛形状
+<center>代码片段2.9：圆柱形松弛形状</center>
 
 ```c++
 relaxationShape 	Cylindrical;
@@ -237,7 +237,7 @@ rOuter 				<scalar>;
 
 **冻结**：冻结松弛形状在模仿任何其他松弛形状的方式上是特殊的，除了一个方面：*如果计算网格正在移动，它不会更新松弛区域的单元索引*。该方法不适用于具有拓扑变化的网格。松弛形状的定义见代码片段2.10
 
-代码片段2.10：冻结松弛形状
+<center>代码片段2.10：冻结型松弛形状</center>
 
 ```c++
 relaxationShape 		Frozen;
@@ -265,7 +265,7 @@ $$C_{m}=\gamma_{p} \frac{1-n}{n}$$
 
 原生公式读取两个参数$d$和$f$（代码片段2.11）。
 
-代码片段2.11：原生松弛区
+<center>代码片段2.11：原生松弛区</center>
 
 ```c++
 d d [0 -2 0 0 0 0 0] 	<vector>;
@@ -282,7 +282,7 @@ $$a=\alpha \frac{(1-n)^{3}}{n^{2}} \frac{\nu}{d_{50}^{2}} \quad, \quad b=\beta \
 
 这里，$\nu$是运动粘度，$d_{50}$是颗粒材料的标称中值直径。输入参数在代码片段2.12中指定。
 
-代码片段2.12：根据Engelund (1953)的阻力公式
+<center>代码片段2.12：根据Engelund (1953)的阻力公式</center>
 
 ```c++
 resistanceFormulation 				engelund1953;
@@ -303,7 +303,7 @@ $$a=\alpha \frac{(1-n)^{2}}{n^{3}} \frac{\nu}{d_{50}^{2}} \quad, \quad b=\beta\l
 
 这里，$\nu$是运动粘度，$d_{50}$是颗粒材料的标称中值直径。输入参数在代码片段2.13中指定。
 
-代码片段2.13：根据an Gent (1995)的阻力公式
+<center>代码片段2.13：根据an Gent (1995)的阻力公式</center>
 
 ```c++
 resistanceFormulation 			vanGent1995;
