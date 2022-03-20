@@ -15,12 +15,12 @@ waves2Foam 在GNU-GPL下开源。waves2Foam最初仅作为自由表面波的生�
 waves2Foam工具箱在大量文献中被广泛使用，其范围从工具箱以及OpenFOAM的自由表面能力的验证到应用。waves2Foam的使用示例如下：
 
 	1. Jacobsen et al. (2014); Jacobsen and Fredsøe (2014a,b) 应用该模型研究了破碎波作用下两岸形态的演化。这涉及到水动力学、泥沙输移和由此产生的河床水位变化之间的耦合。
- 	2. Paulsen et al. (2014a,b) 使用此工具箱研究了单桩上的波浪载荷。Paulsen et al. (2014a) 的工作还包括waves2Foam与完全非线性波问题的解之间的耦合，即具有非线性边界条件的拉普拉斯方程；更多细节见第4.3.3节。
- 	3. 月池内水体共振高程(Moradi, 2015)。
- 	4. 桥面波浪载荷的研究，并与实验数据进行的对比(Seiffert, 2014; Seiffert et al., 2014; Hayatdavoodi et al., 2014).
- 	5. Jacobsen et al. (2015)通过常规不规则入射波对waves2Foam进行了大量物理实验验证。结果表明waves2Foam中波浪生成与吸收的松弛区方法在不增加水位的情况下补偿了漂移引起的附加质量通量。
- 	6. Stahlmann (2013)将waves2Foam中的波浪生成与三脚架钢结构周围沉积物床变形的方法耦合起来；目的是评估这种结构对冲刷模式的影响。
- 	7. Elsafti和Oumeraci（2013）将waves2Foam与岩土模型耦合，以研究沉箱防波堤下的残余孔隙压力累积和耗散。
+	2. Paulsen et al. (2014a,b) 使用此工具箱研究了单桩上的波浪载荷。Paulsen et al. (2014a) 的工作还包括waves2Foam与完全非线性波问题的解之间的耦合，即具有非线性边界条件的拉普拉斯方程；更多细节见第4.3.3节。
+	3. 月池内水体共振高程(Moradi, 2015)。
+	4. 桥面波浪载荷的研究，并与实验数据进行的对比(Seiffert, 2014; Seiffert et al., 2014; Hayatdavoodi et al., 2014).
+	5. Jacobsen et al. (2015)通过常规不规则入射波对waves2Foam进行了大量物理实验验证。结果表明waves2Foam中波浪生成与吸收的松弛区方法在不增加水位的情况下补偿了漂移引起的附加质量通量。
+	6. Stahlmann (2013)将waves2Foam中的波浪生成与三脚架钢结构周围沉积物床变形的方法耦合起来；目的是评估这种结构对冲刷模式的影响。
+	7. Elsafti和Oumeraci（2013）将waves2Foam与岩土模型耦合，以研究沉箱防波堤下的残余孔隙压力累积和耗散。
 
 应用的列表在稳步增加中，最新的应用可在[google学术](https://scholar.google.com)或[ResearchGate](www.researchgate.net)上查看。
 
@@ -48,9 +48,7 @@ waves2Foam在以下版本中均可编译，但请注意警告1.1.
 * OF+-3.0，OF+-1606，OF+-1612
 * FE-3.1, FE-3.2, FE-4.0 
 
-> 警告1.1: 数值浪高仪不能在最新版的OpenFOAM版本(OF和OF+)上编译。
->
-> 液面取样工具（数值浪高仪）是OpenFOAM模拟自由表面波的重要部分。由于代码重组，浪高仪不适用于OF-4.0（及更新版本）和OF+-1612（及更新版本）。这个问题将在未来更新中解决。（译者注：OF+-1612以上版本问题已解决）
+> <font color=red>警告1.1: 数值浪高仪不能在最新版的OpenFOAM版本(OF和OF+)上编译。液面取样工具（数值浪高仪）是OpenFOAM模拟自由表面波的重要部分。由于代码重组，浪高仪不适用于OF-4.0（及更新版本）和OF+-1612（及更新版本）。这个问题将在未来更新中解决。（译者注：OF+-1612以上版本问题已解决）</font>
 
 ## 1.4 安装
 
